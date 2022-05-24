@@ -17,9 +17,9 @@ app.use('/api/post', postRouter)
 
 app.use(
     cors({
-        // credentials: true,
-        // origin: ['http://127.0.0.1:5500/'],
-        // optionsSuccessStatus: 200
+        origin:'*',
+        credentials:true,            //access-control-allow-credentials:true
+        optionSuccessStatus:200,
     })
 );
 
