@@ -17,12 +17,17 @@ app.use('/api/post', postRouter)
 
 app.use(
     cors({
-        origin:'*',
-        credentials:true,            //access-control-allow-credentials:true
-        optionSuccessStatus:200,
+        origin: "*",
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        preflightContinue: false
     })
 );
-
+// app.all('*', function(req, res, next) {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+//     res.header('Access-Control-Allow-Headers', 'Content-Type');
+//     next();
+// });
 start = async ()=>{
     https.createServer(options, app).listen(8447);
     app.listen(config.PORT, ()=>{
