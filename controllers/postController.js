@@ -9,7 +9,7 @@ class PostController{
         res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
         res.setHeader('Access-Control-Allow-Credentials', true); // If needed
 
-        if(text && mail){
+        if( mail){
             const result = await mailService.sendMessageToInfo(text, mail, phone)
             return res.json(result)
         }
