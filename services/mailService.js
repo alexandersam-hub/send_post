@@ -14,7 +14,7 @@ class MailService {
         });
     }
 
-    async sendMessageToInfo(text, mail) {
+    async sendMessageToInfo(text, mail, phone) {
         try{
 
             await this.transporter.sendMail({
@@ -26,8 +26,9 @@ class MailService {
             <div>
                 <h1>Поступило обращение</h1>
                 <div>Пользователь: ${mail}</div>
+                <div>Телефон: ${phone?phone:'-'}</div>
                 <div>Текст сообщения:</div>
-                <div>${text}</div>
+                <div>${text?text:'-'}</div>
             </div>
             `
             })
