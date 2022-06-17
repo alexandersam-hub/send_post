@@ -1,6 +1,7 @@
 const mailer = require('nodemailer')
 const config = require('../config')
 
+
 class MailService {
     constructor() {
         this.transporter = mailer.createTransport({
